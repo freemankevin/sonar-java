@@ -209,6 +209,12 @@ public class JParser {
     ASTUtils.mayTolerateMissingType(astNode.getAST());
 
     setParents(tree);
+    // clean environment to release memory
+    astParser.setEnvironment(
+      new String[]{},
+      new String[]{},
+      new String[]{},
+      false);
     return tree;
   }
 
